@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Stuudent.Models.Student>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>For User</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RollNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SscResult)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HscResult)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cgpa)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RollNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SscResult)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HscResult)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cgpa)
+        </td>
+    </tr>
+}
+
+</table>

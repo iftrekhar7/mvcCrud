@@ -1,0 +1,30 @@
+namespace Stuudent.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class InitialDb : DbMigration
+    {
+        public override void Up()
+        {
+            CreateTable(
+                "dbo.Students",
+                c => new
+                    {
+                        IDStudent = c.Int(nullable: false, identity: true),
+                        Name = c.String(nullable: false, maxLength: 20),
+                        RollNo = c.String(nullable: false, maxLength: 10),
+                        SscResult = c.String(nullable: false, maxLength: 5),
+                        HscResult = c.String(nullable: false, maxLength: 5),
+                        Cgpa = c.String(nullable: false, maxLength: 5),
+                    })
+                .PrimaryKey(t => t.IDStudent);
+            
+        }
+        
+        public override void Down()
+        {
+            DropTable("dbo.Students");
+        }
+    }
+}
